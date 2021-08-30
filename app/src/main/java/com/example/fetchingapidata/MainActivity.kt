@@ -19,16 +19,15 @@ import com.example.fetchingapidata.viewModel.MainActivityViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var limit :EditText
-    lateinit var offset :EditText
+
     lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        limit = findViewById(R.id.limit)
-        offset  = findViewById(R.id.offset)
+        val limit :EditText = findViewById(R.id.limit)
+        val offset :EditText  = findViewById(R.id.offset)
         val btnFetch :Button = findViewById(R.id.btnFetch)
         recyclerView = findViewById(R.id.myRecyclerView)
 
