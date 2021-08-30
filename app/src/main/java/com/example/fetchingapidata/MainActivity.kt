@@ -33,24 +33,24 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.myRecyclerView)
 
         btnFetch.setOnClickListener {
-            val intent = Intent(this,MainActivityViewModel::class.java)
-            intent.putExtra("LIMIT", limit.text.toString().toInt())
-            intent.putExtra("OFFSET", offset.text.toString().toInt())
-            startActivity(intent)
+            initViewModel(
+                limit.text.toString().toInt(),
+                offset.text.toString().toInt()-1
+            )
         }
 
         recyclerView.layoutManager = GridLayoutManager(this,2)
-//        val decoration = DividerItemDecoration(this,DividerItemDecoration.VERTICAL)
-//        recyclerView.addItemDecoration(decoration)
+        val decoration = DividerItemDecoration(this,DividerItemDecoration.VERTICAL)
+        recyclerView.addItemDecoration(decoration)
 
-        initViewModel()
+
 
 
 
     }
 
     //Initialize viewMode
-    fun initViewModel(){
+    fun initViewModel(limit :Int, offset :Int){
         //my viewModel Object
         val viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        viewModel.makeAPICall()
+        viewModel.makeAPICall(limit, offset)
 
     }
 

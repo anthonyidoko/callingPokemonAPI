@@ -13,4 +13,12 @@ object RetrofitClient {
             .build()
             .create(RetrofitService::class.java)
     }
+
+//    fun getRetrofitInstanceDetail() :RetrofitService{
+//        return Retrofit.Builder()
+//            .baseUrl(BASE_URL)
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .build()
+//            .create()
+//    }
 }

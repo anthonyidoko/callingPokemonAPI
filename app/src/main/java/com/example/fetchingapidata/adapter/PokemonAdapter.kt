@@ -8,14 +8,25 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fetchingapidata.R
 import com.example.fetchingapidata.data.Result
+import com.squareup.picasso.Picasso
 
 class PokemonAdapter(val pokemonItems: List<Result>) : RecyclerView.Adapter<PokemonAdapter.MyViewholder>(){
 
 
-    class MyViewholder(view : View) :RecyclerView.ViewHolder(view){
+    class MyViewholder(view : View) :RecyclerView.ViewHolder(view),View.OnClickListener{
         val pokemonName :TextView = view.findViewById(R.id.pokemonName)
         val pokemonImage :ImageView = view.findViewById(R.id.pokemonImage)
 
+        override fun onClick(p0: View?) {
+
+        }
+
+    }
+
+    interface RecyclerClickListener{
+        fun getSpecificPokemon(view :View,imageNumber :String){
+
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewholder {
@@ -27,6 +38,14 @@ class PokemonAdapter(val pokemonItems: List<Result>) : RecyclerView.Adapter<Poke
     override fun onBindViewHolder(holder: MyViewholder, position: Int) {
         val currentPokemon = pokemonItems[position]
         holder.pokemonName.text = currentPokemon.name
+
+        val imageNumber = "${currentPokemon.url.substring(
+            34,currentPokemon.url.length-1)}.png"
+        Picasso.get()
+            .load(
+                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
+                        "$imageNumber")
+            .into(holder.pokemonImage)
     }
 
     override fun getItemCount() = pokemonItems.size
