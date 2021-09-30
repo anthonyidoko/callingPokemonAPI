@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextStyling">
+        <item name="android:textSize">30dp</item>
+        <item name="android:background">@color/title_text_bg</item>
+        <item name="fontFamily">@font/kurale_regular</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+
+    </style>
+
+    <style name="detailTextStyle">
+        <item name="android:textSize">30sp</item>
+        <item name="fontFamily">@font/patrickhand_regular</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+</resources>

@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">FetchingApiData</string>
+    <string name="app_name">WeekSevenTask</string>
+    <string name="pokemon_characters">Pokemon Characters</string>
+    <string name="pokemon_detail_page">Pokemon Detail Page</string>
+    <string name="tap_to_select_image">tap to select image</string>
 </resources>
