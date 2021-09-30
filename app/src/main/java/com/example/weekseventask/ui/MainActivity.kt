@@ -14,11 +14,6 @@ class MainActivity : AppCompatActivity() {
 
         setUpFragment()
 
-        val btn1 = findViewById<Button>(R.id.btn1)
-        btn1.setOnClickListener {
-            val intent = Intent(this, ImageUploadActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     private fun setUpFragment() {
